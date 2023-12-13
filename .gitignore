@@ -10,6 +10,7 @@
 
 # production
 /webapp/build
+/build
 
 # misc
 .DS_Store
