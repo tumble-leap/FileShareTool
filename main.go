@@ -1,9 +1,9 @@
 package main
 
 import (
+	"FileShareTool/webapp"
 	"encoding/json"
 	"errors"
-	"fileShareTool/webapp"
 	"flag"
 	"fmt"
 	"io"
@@ -251,7 +251,9 @@ func main() {
 	// 启动服务器并监听端口
 
 	log.Printf("Server is running on http://localhost:%d\n", port)
-	go openBrowser(fmt.Sprintf("localhost:%d", port))
+	log.Printf("Please open http://localhost:%d in this PC\n", port)
+	log.Printf("Or open http://%s:%d in other PC under the LAN\n", localIp, port)
+	go openBrowser(fmt.Sprintf("http://localhost:%d", port))
 	err = http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 	if err != nil {
 		fmt.Println("Error:", err)
