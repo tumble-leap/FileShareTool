@@ -1,9 +1,9 @@
 package main
 
 import (
-	"FileShareTool/webapp"
 	"encoding/json"
 	"errors"
+	"file-share-tool/webapp"
 	"flag"
 	"fmt"
 	"io"
